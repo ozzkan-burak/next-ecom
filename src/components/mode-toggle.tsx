@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
@@ -13,7 +13,13 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 export function ModeToggle() {
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    if (!theme) {
+      setTheme('light'); // Varsayılan temayı ayarlayın
+    }
+  }, [theme, setTheme]);
 
   return (
     <DropdownMenu>
