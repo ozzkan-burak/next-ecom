@@ -1,5 +1,9 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -119,4 +123,12 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.bgone {
+  @apply bg-mycolor1;
+}
+
+.textone {
+  @apply text-mycolor1;
 }
