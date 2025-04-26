@@ -1,7 +1,9 @@
-import React from 'react';
+import Link from 'next/link';
 
-const Logo = () => {
-  return <div>Logo</div>;
+export const Logo = () => {
+  return (
+    <Link href="/" className="">
+      Shopping
+    </Link>
+  );
 };
-
-export default Logo;
