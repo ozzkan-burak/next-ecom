@@ -126,9 +126,9 @@
 }
 
 .bgone {
-  @apply bg-mycolor1;
+  /* @apply bg-mycolor1; */
 }
 
 .textone {
-  @apply text-mycolor1;
+  /* @apply text-mycolor1; */
 }
