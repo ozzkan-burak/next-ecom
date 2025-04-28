@@ -5,6 +5,7 @@ import typography from '@tailwindcss/typography';
 const config: Config = {
   content: [
     './src/**/*.{js,ts,jsx,tsx}', // Tailwind'in tarayacağı dosyalar
+    './src/app/**/*.css', // Tailwind'in tarayacağı CSS dosyaları
   ],
   theme: {
     extend: {
