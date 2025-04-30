@@ -7,9 +7,9 @@ interface IAuthLayoutProps {
 const AuthLayout = ({ children }: IAuthLayoutProps) => {
   return (
     <div className="h-screen flex justify-center items-center bg-one">
-      <div className="hidden lg-block w-1/2 h-full">
+      <div className="hidden lg:block w-1/2 h-full">
         <Image
-          src="/image/login.webp"
+          src="/images/login.jpg"
           width={1080}
           height={1920}
           alt="login"
