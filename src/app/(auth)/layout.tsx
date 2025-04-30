@@ -9,7 +9,9 @@ const AuthLayout = ({ children }: IAuthLayoutProps) => {
     <div className="h-screen flex justify-center items-center bg-one">
       <div className="hidden lg-block w-1/2 h-full">
         <Image
-          src="/images/login.jpg"
+          src="/image/login.webp"
+          width={1080}
+          height={1920}
           alt="login"
           className="w-full h-full object-cover object-top"
         />
