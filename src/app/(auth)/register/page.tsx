@@ -13,8 +13,12 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import Link from 'next/link';
 
 const formSchema = z.object({
+  userName: z.string().min(2, {
+    message: 'Username must be at least 2 characters.',
+  }),
   email: z.string().min(2, {
     message: 'Email must be at least 2 characters.',
   }),
@@ -30,34 +34,62 @@ const Register = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      userName: '',
       email: '',
       password: '',
     },
   });
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-4/7">
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input placeholder="email@gmail.com" {...field} />
-              </FormControl>
-              <FormMessage />
-              <FormLabel>Password</FormLabel>
-              <FormControl>
-                <Input placeholder="password" type="password" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
+    <>
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-8 w-4/7"
+        >
+          <FormField
+            control={form.control}
+            name="userName"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>User Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="User Name" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input placeholder="email@gmail.com" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Password</FormLabel>
+                <FormControl>
+                  <Input placeholder="password" type="password" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button type="submit">Submit</Button>
+        </form>
+      </Form>
+      <Link href="/auth/login">Already a member ?</Link>
+    </>
   );
 };
 
