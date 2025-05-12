@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
+import { Label } from '@radix-ui/react-label';
 
 const formSchema = z.object({
   email: z.string().min(2, {
@@ -68,10 +69,14 @@ const Login = () => {
               </FormItem>
             )}
           />
-          <Button type="submit">Submit</Button>
+          <Label className="flex flex-col items-center space-x-2">
+            <Button className="w-100" type="submit">
+              Submit
+            </Button>
+            <Link href="/auth/register">Not a member ?</Link>
+          </Label>
         </form>
       </Form>
-      <Link href="/auth/register">Not a member ?</Link>
     </>
   );
 };
