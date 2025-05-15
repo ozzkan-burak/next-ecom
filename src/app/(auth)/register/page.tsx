@@ -88,7 +88,7 @@ const Register = () => {
           <Button type="submit">Submit</Button>
         </form>
       </Form>
-      <Link href="/auth/login">Already a member ?</Link>
+      <Link href="/login">Already a member ?</Link>
     </>
   );
 };

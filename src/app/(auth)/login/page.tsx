@@ -73,7 +73,7 @@ const Login = () => {
             <Button className="w-100" type="submit">
               Submit
             </Button>
-            <Link href="/auth/register">Not a member ?</Link>
+            <Link href="/register">Not a member ?</Link>
           </Label>
         </form>
       </Form>
